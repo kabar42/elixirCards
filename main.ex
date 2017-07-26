@@ -1,4 +1,6 @@
-import Deck
-
 theDeck = Deck.std_deck()
-IO.puts deck_to_string(theDeck)
+handList = []
+outList = Hand.generateHands!(theDeck, [], handList)
+IO.puts "Hand count: #{length(outList)}"
+
+# IO.puts Deck.deck_to_string(theDeck)
