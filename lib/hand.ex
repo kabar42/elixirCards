@@ -1,7 +1,7 @@
 defmodule Hand do
-  def generateHands!([], [], handList), do: handList
+  def generateHands([], [], handList), do: handList
 
-  def generateHands!([], hand, handList) do
+  def generateHands([], hand, handList) do
     cond do
       length(hand) >= 5 ->
         [hand | handList]
@@ -10,11 +10,11 @@ defmodule Hand do
     end
   end
 
-  def generateHands!([c | deck], [], handList) do
+  def generateHands([c | deck], [], handList) do
     generateHands!(deck, [c], handList) ++ generateHands!(deck, [], handList)
   end
 
-  def generateHands!([c | deck], hand, handList) do
+  def generateHands([c | deck], hand, handList) do
     cond do
       length(hand) >= 5 ->
         [hand | handList]
